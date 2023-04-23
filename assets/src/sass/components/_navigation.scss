@@ -1,14 +1,18 @@
+:root {
+	--mobile-menu-duration: 0.185s;
+}
 .main-navigation {
 	@apply relative flex items-center;
 	.menu-toggle {
-		@apply absolute right-0 top-1/2 z-40 block h-8 w-8 -translate-y-1/2 appearance-none overflow-hidden border-0 bg-red-200 -indent-[9999rem] md:hidden;
+		@apply absolute right-0 top-1/2 z-40 block h-8 w-8 -translate-y-1/2 appearance-none overflow-hidden border-0 -indent-[9999rem] md:hidden;
 		span {
 			@apply absolute left-0 h-0.5 w-full bg-white;
 			&:first-child,
 			&:last-child {
 				transition-property: top, transform;
-				transition-duration: 0.2s, 0.2s;
-				transition-delay: 0.2s, 0s;
+				transition-duration: var(--mobile-menu-duration),
+					var(--mobile-menu-duration);
+				transition-delay: var(--mobile-menu-duration), 0s;
 				transition-timing-function: ease, ease;
 				transform-origin: center;
 			}
@@ -20,7 +24,8 @@
 			}
 			&:nth-child(2) {
 				top: calc(50% - 1px);
-				transition: opacity 0.2s ease 0.2s;
+				transition: opacity var(--mobile-menu-duration) ease
+					var(--mobile-menu-duration);
 			}
 			&:last-child {
 				bottom: 6px;
@@ -29,14 +34,14 @@
 		&[aria-expanded='true'] {
 			span {
 				&:first-child {
-					top: 14px;
+					top: 15px;
 					transform: rotate(45deg);
-					transition-delay: 0s, 0.2s;
+					transition-delay: 0s, var(--mobile-menu-duration);
 				}
 				&:last-child {
-					bottom: 14px;
+					bottom: 15px;
 					transform: rotate(-45deg);
-					transition-delay: 0s, 0.2s;
+					transition-delay: 0s, var(--mobile-menu-duration);
 				}
 				&:nth-child(2) {
 					opacity: 0;
@@ -45,15 +50,15 @@
 		}
 	}
 	.menu-primary-container {
-		@apply fixed left-0 top-0 flex h-screen w-full items-center justify-center
-		md:static md:mr-3 md:block md:h-auto md:w-auto;
+		@apply fixed left-0 top-[100vh] flex h-screen w-full items-center justify-center bg-black
+		md:static md:mr-3 md:block md:h-auto md:w-auto md:bg-transparent;
 		.menu {
-			@apply flex flex-row items-center gap-5 lg:gap-6;
+			@apply flex flex-col items-center gap-5 md:flex-row lg:gap-6;
 			.menu-item {
 				@apply opacity-0;
 			}
 			a {
-				@apply text-sm font-semibold text-white outline-none lg:text-base;
+				@apply text-2xl font-semibold text-white outline-none md:text-sm lg:text-base;
 			}
 			.btn {
 				@apply hidden lg:list-item;
@@ -64,3 +69,7 @@
 		}
 	}
 }
+
+// body.is-mobile-menu {
+// 	@apply fixed;
+// }

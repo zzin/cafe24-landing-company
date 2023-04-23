@@ -13,6 +13,7 @@ const InitHero = () => {
 		gsap.set(heroSlogan, { xPercent: -100, autoAlpha: 0 });
 		gsap.set([titleUp, titleH2, titleDown], { autoAlpha: 0, xPercent: 5 });
 		gsap.set([siteHeaerBranding, menuItems], { y: -20, autoAlpha: 0 });
+		gsap.globalTimeline.timeScale(1.5);
 	};
 
 	const startHero = () => {

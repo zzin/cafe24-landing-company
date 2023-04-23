@@ -36,12 +36,10 @@
           <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
             <span></span><span></span><span></span>
           </button>
-
           <?php wp_nav_menu([
           	'theme_location' => 'menu-1',
           	'menu_id' => 'primary-menu',
           ]); ?>
-
           <div class="toggle-mode select-none opacity-0 transition-opacity z-30">
             <label for="toggleTheme" class="flex items-center cursor-pointer">
               <div class="relative">

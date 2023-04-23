@@ -1,4 +1,4 @@
-<section class="section crew">
+<section class="section crew" id="section-crew">
   <div class="crew--wrap">
     <div class="crew--title">
       <div class="title--wrap">

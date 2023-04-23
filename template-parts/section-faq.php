@@ -1,4 +1,4 @@
-<section class="section faq">
+<section class="section faq" id="section-faq">
   <div class="faq--title">
     <div class="title--wrap">
       <h2 class="title">FAQ</h2>

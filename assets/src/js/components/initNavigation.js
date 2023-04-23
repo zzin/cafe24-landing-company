@@ -86,6 +86,11 @@ const InitNavigation = () => {
 	 * Sets or removes .focus class on an element.
 	 */
 	function toggleFocus() {
+		if (body.classList.contains('is-mobile-menu')) {
+			setTimeout(() => {
+				button.click();
+			}, 100);
+		}
 		if (event.type === 'focus' || event.type === 'blur') {
 			let self = this;
 			// Move up through the ancestors of the current link until we hit .nav-menu.

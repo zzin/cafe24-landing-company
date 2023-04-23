@@ -1,4 +1,4 @@
-<section class="section products">
+<section class="section products" id="section-products">
   <div class="products--list">
     <?php for ($i = 0; $i < 7; $i++) {
     	get_template_part('template-parts/split/split', 'product', [

@@ -24,3 +24,12 @@
 		@apply mr-1.5 mt-0.5 inline-block h-3 border-r border-slate-400 pl-1.5 not-italic opacity-40;
 	}
 }
+#scroll-top {
+	@apply fixed -right-10 bottom-10 z-10 bg-black/10 leading-none transition-all duration-500 ease-in-out;
+}
+
+#page.aos-animate {
+	#scroll-top {
+		@apply right-0;
+	}
+}

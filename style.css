@@ -698,23 +698,6 @@ textarea {
 	display: block;
 	text-decoration: none;
 }
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul.menu {
-	display: block;
-}
-
-@media screen and (min-width: 1024px) {
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation ul.menu {
-		display: flex;
-	}
-}
-
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {

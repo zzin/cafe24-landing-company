@@ -28,7 +28,7 @@ const InitDefault = () => {
 				const heightValue = document.documentElement.classList.contains(
 					'size-pc'
 				)
-					? 140
+					? 72
 					: 52;
 				gsap.to(window, {
 					duration: 0.8,

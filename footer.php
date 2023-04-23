@@ -28,6 +28,11 @@
     Copyright ⓒ 2023 DESIGNBEE co., ltd. All rights reserved.
   </div><!-- .site-info -->
 </footer><!-- #colophon -->
+<div id="scroll-top">
+  <button type="button">
+    <i class="btn btn--up"></i>
+  </button>
+</div>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

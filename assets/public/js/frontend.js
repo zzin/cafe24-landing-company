@@ -190,6 +190,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _initMarquee__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./initMarquee */ "./assets/src/js/components/initMarquee.js");
 /* harmony import */ var _initRequest__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./initRequest */ "./assets/src/js/components/initRequest.js");
 /* harmony import */ var _initNavigation__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./initNavigation */ "./assets/src/js/components/initNavigation.js");
+/* harmony import */ var _initScrollTop__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./initScrollTop */ "./assets/src/js/components/initScrollTop.js");
 
 
 
@@ -199,24 +200,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import InitSwiper from './initSwiper';
-// import InitFlip from './initFlip';
-// import InitLenis from './initLenis';
-// import InitSwiper from './initSwiper';
-// const initNavigation = new InitNavigation();
-// const initSwiper = new InitSwiper();
-// const initLenis = new InitLenis();
-// const initFlip = new InitFlip();
+
 var initDefault = new _initDefault__WEBPACK_IMPORTED_MODULE_2__["default"]();
 var initNavigation = new _initNavigation__WEBPACK_IMPORTED_MODULE_8__["default"]();
 var initDark = new _initDark__WEBPACK_IMPORTED_MODULE_1__["default"]();
-// const initSwiper = new InitSwiper();
 var initHero = new _initHero__WEBPACK_IMPORTED_MODULE_5__["default"]();
 var initFlickity = new _initFlickity__WEBPACK_IMPORTED_MODULE_4__["default"]();
 var initBanner = new _initBanner__WEBPACK_IMPORTED_MODULE_0__["default"]();
 var initMarquee = new _initMarquee__WEBPACK_IMPORTED_MODULE_6__["default"]();
 var initFaq = new _initFaq__WEBPACK_IMPORTED_MODULE_3__["default"]();
 var initRequest = new _initRequest__WEBPACK_IMPORTED_MODULE_7__["default"]();
+var initScrollTop = new _initScrollTop__WEBPACK_IMPORTED_MODULE_9__["default"]();
 
 /***/ }),
 
@@ -341,7 +335,7 @@ var InitDefault = function InitDefault() {
       var target = link.getAttribute('href');
       link.addEventListener('click', function (e) {
         e.preventDefault();
-        var heightValue = document.documentElement.classList.contains('size-pc') ? 140 : 52;
+        var heightValue = document.documentElement.classList.contains('size-pc') ? 72 : 52;
         gsap__WEBPACK_IMPORTED_MODULE_1__["default"].to(window, {
           duration: 0.8,
           scrollTo: {
@@ -572,6 +566,7 @@ var InitHero = function InitHero() {
       y: -20,
       autoAlpha: 0
     });
+    gsap__WEBPACK_IMPORTED_MODULE_0__["default"].globalTimeline.timeScale(1.5);
   };
   var startHero = function startHero() {
     var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline({
@@ -795,6 +790,11 @@ var InitNavigation = function InitNavigation() {
     _iterator.f();
   }
   function toggleFocus() {
+    if (body.classList.contains('is-mobile-menu')) {
+      setTimeout(function () {
+        button.click();
+      }, 100);
+    }
     if (event.type === 'focus' || event.type === 'blur') {
       var self = this;
       // Move up through the ancestors of the current link until we hit .nav-menu.
@@ -909,6 +909,35 @@ var InitRequest = /*#__PURE__*/function () {
   return InitRequest;
 }();
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InitRequest);
+
+/***/ }),
+
+/***/ "./assets/src/js/components/initScrollTop.js":
+/*!***************************************************!*\
+  !*** ./assets/src/js/components/initScrollTop.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+
+var InitScrollTop = function InitScrollTop() {
+  var scrollTop = document.getElementById('scroll-top');
+  scrollTop.addEventListener('click', function () {
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(window, {
+      duration: 0.8,
+      scrollTo: {
+        y: 0
+      },
+      ease: 'power3.out'
+    });
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InitScrollTop);
 
 /***/ }),
 

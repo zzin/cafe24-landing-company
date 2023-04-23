@@ -1,4 +1,7 @@
 .toggle-mode {
+	& > label {
+		@apply mr-10 transition-all md:mr-0;
+	}
 	.dot-inner {
 		transform: translateX(-50%);
 	}

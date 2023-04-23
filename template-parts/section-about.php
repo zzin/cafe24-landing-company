@@ -1,4 +1,4 @@
-<section class="section about" data-component="flickity">
+<section class="section about" data-component="flickity" id="section-about">
   <div class="container--full">
     <div class="title--wrap">
       <div class="flex justify-between items-center">
