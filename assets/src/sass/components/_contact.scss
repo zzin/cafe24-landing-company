@@ -1,0 +1,31 @@
+.contact {
+	@apply container--full;
+	&--form {
+		.title {
+			@apply text-xl font-bold text-black lg:col-span-2;
+		}
+		@apply mt-8 grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-5;
+		.block {
+			@apply lg:col-span-1;
+		}
+	}
+	label {
+		@apply relative;
+		.error-message {
+			@apply absolute -bottom-2;
+		}
+	}
+	input[type='text'],
+	input[type='email'],
+	input[type='tel'],
+	textarea {
+		@apply mb-3;
+	}
+	input[type='checkbox'] {
+		@apply mr-1;
+	}
+
+	button[type='submit'] {
+		@apply min-w-full bg-[var(--primaryColor)] md:min-w-[240px];
+	}
+}

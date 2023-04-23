@@ -1,0 +1,12 @@
+.products {
+	@apply container--full grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-8;
+	&--list {
+		@apply order-2 grid grid-cols-2 gap-x-5 gap-y-10 lg:order-1 lg:gap-x-8;
+	}
+	&--title {
+		@apply order-1 mb-5 lg:order-2 lg:mb-0;
+		.title--wrap {
+			@apply sticky top-20;
+		}
+	}
+}

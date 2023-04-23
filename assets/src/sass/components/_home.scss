@@ -1,0 +1,17 @@
+.site {
+	&.aos-init {
+		.site-header {
+			&--wrap {
+				@apply transition-all duration-500;
+			}
+		}
+	}
+	&.aos-animate {
+		.site-header {
+			@apply bg-black/20 backdrop-blur-sm;
+			&--wrap {
+				@apply py-2.5 lg:py-5;
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+.marquee {
+	&--wrap {
+		@apply flex gap-6 overflow-x-hidden whitespace-nowrap;
+		.marquee-content {
+			@apply flex gap-6;
+			.text {
+				@apply text-[12vmax] font-bold text-black/10 lg:text-[9vmax];
+			}
+		}
+	}
+}

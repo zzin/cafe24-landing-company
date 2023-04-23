@@ -1,0 +1,16 @@
+.crew {
+	&--wrap {
+		@apply container--full grid grid-cols-3 gap-8;
+		.title {
+			&--wrap {
+				@apply sticky top-20;
+			}
+		}
+	}
+	&--title {
+		@apply col-span-3 lg:col-span-1;
+	}
+	&--list {
+		@apply col-span-3 grid grid-cols-2 gap-x-5 gap-y-10 md:grid-cols-3 lg:col-span-2 lg:gap-x-8;
+	}
+}

@@ -1,0 +1,21 @@
+.site-header {
+	@apply fixed z-30 w-full;
+	&--info {
+		@apply container--full hidden h-[40px] w-full items-center justify-between bg-white lg:flex;
+		&-ul {
+			@apply flex flex-row text-xs;
+		}
+	}
+	&--wrap {
+		@apply container--full flex items-center justify-between py-4 text-white lg:py-10;
+	}
+	&--branding {
+		@apply leading-[0] opacity-0;
+		.custom-logo {
+			@apply h-6 w-auto lg:h-[30px];
+		}
+		.custom-logo-link {
+			@apply outline-none;
+		}
+	}
+}

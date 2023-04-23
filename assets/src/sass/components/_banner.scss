@@ -1,0 +1,18 @@
+section.banner {
+	@apply relative text-white;
+	figure {
+		clip-path: polygon(10% 0%, 90% 0%, 90% 100%, 10% 100%);
+		img {
+			@apply min-h-[300px] object-cover;
+		}
+	}
+	.massage {
+		@apply absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 p-5 text-center;
+		.title {
+			@apply mb-4 text-2xl font-bold lg:text-4xl;
+		}
+		.lead {
+			@apply mb-8 block text-base lg:text-xl;
+		}
+	}
+}

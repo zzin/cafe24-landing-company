@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.container {
+		&--default {
+			@apply container mx-auto w-full;
+			@media (min-width: 1720px) {
+				max-width: 1720px;
+			}
+		}
+		&--full {
+			@apply mx-auto w-full;
+		}
+		&--default,
+		&--full {
+			@apply px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-[100px];
+		}
+	}
+}
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css');
+
+@import '../../../node_modules/flickity/dist/flickity.min.css';
+@import '../../../node_modules/flickity-fade/flickity-fade.css';
+@import '../../../node_modules/swiper/swiper.scss';
+@import 'utils/**/*.scss';
+@import './components/index';

@@ -1,0 +1,17 @@
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+textarea {
+	@apply block h-14 w-full rounded-lg border-transparent bg-gray-100 text-lg placeholder:text-gray-500
+focus:border-gray-200 focus:bg-white focus:text-black focus:ring-0;
+}
+textarea {
+	@apply h-40 w-full resize-none;
+}
+input[type='checkbox'] {
+	@apply rounded border-transparent bg-gray-200 text-gray-700
+  focus:border-transparent focus:bg-gray-200 focus:ring-0 focus:ring-white focus:ring-offset-2;
+}
+.error-message {
+	@apply block text-sm font-normal text-red-600;
+}

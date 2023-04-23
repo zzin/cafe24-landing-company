@@ -1,0 +1,31 @@
+{
+	"editor.tabSize": 2,
+	"editor.insertSpaces": true,
+	"editor.detectIndentation": true,
+	"css.lint.unknownAtRules": "ignore",
+	"scss.lint.unknownAtRules": "ignore",
+	"html.validate.styles": false,
+	"[php]": {
+		"editor.formatOnSave": true
+	},
+	"prettier.useTabs": false,
+	"prettier.semi": true,
+	"cSpell.words": [
+		"cptui",
+		"customizer",
+		"flickity",
+		"incharge",
+		"kboard",
+		"kdmfi",
+		"Kyungbok",
+		"moim",
+		"poweredby",
+		"skeeper",
+		"telemedicine",
+		"withapet",
+		"wpapi",
+		"wpdb"
+	],
+	"intelephense.diagnostics.undefinedTypes": false,
+	"intelephense.telemetry.enabled": false
+}

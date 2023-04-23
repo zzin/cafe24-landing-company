@@ -1,0 +1,65 @@
+.about {
+	@apply overflow-hidden;
+	.flickity {
+		@apply mt-7 opacity-0 transition-opacity duration-500 md:mt-14;
+		&-viewport {
+			@apply transition-all duration-700;
+			&.is-pointer-down {
+				@apply scale-[.975];
+			}
+		}
+		&-button,
+		&-page-dots {
+			@apply invisible -z-50 h-0 w-0 opacity-0;
+		}
+		&.flickity-enabled {
+			@apply opacity-100 delay-700;
+			.flickity-viewport {
+				@apply overflow-visible;
+			}
+		}
+		&-nav-line {
+			@apply relative mt-7 block h-[1px] bg-black/10 md:mt-14;
+			.bar {
+				@apply absolute -top-[1px] left-0 block h-[3px] w-[10px] bg-black transition-all duration-500;
+			}
+		}
+		.carousel-cell {
+			@apply mr-5 w-[calc(100%-20px)] overflow-hidden  rounded-xl bg-black sm:w-[calc(50%-20px)] md:mr-8 md:w-[calc(33.3333%-32px)];
+			figure {
+				@apply relative overflow-hidden;
+				img {
+					@apply h-[400px] max-h-[600px] w-full object-cover opacity-90 transition-opacity duration-700 md:h-auto;
+				}
+				figcaption {
+					@apply absolute left-6 top-14 w-[calc(100%-3rem)] text-white opacity-0 transition-all duration-700;
+					h3 {
+						@apply mb-2 text-2xl font-bold lg:text-3xl;
+					}
+					.desc {
+						@apply text-base lg:text-lg;
+					}
+				}
+			}
+			&.is-selected {
+				figure {
+					img {
+						@apply opacity-30;
+					}
+					figcaption {
+						@apply top-6 opacity-100;
+					}
+				}
+			}
+		}
+	}
+	.control {
+		.btn--oval {
+			@apply transition-opacity;
+			&.is-not {
+				@apply pointer-events-none opacity-20;
+				box-shadow: 0 0 0 1px white inset;
+			}
+		}
+	}
+}

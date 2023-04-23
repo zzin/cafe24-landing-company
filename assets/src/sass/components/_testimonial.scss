@@ -1,0 +1,66 @@
+.testimonial {
+	@apply overflow-x-hidden;
+	&--info {
+		@apply container--full text-center;
+	}
+	&--title {
+		@apply text-[var(--primaryColor)];
+	}
+	&--desc {
+		@apply mt-4;
+	}
+	&--wrap {
+		@apply container--full mt-28;
+		.swiper-wide {
+			@apply overflow-visible opacity-0 transition-opacity duration-500;
+			&.swiper-initialized {
+				@apply opacity-100;
+			}
+		}
+		.swiper-wrapper {
+			.swiper-slide {
+				// @apply w-[88%] px-2.5 md:w-[40%] lg:w-[33.333%];
+				.card {
+					@apply opacity-80 grayscale transition-all;
+					box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.025),
+						0px 10px 20px -10px rgba(0, 0, 0, 0.05);
+				}
+				&.swiper-slide-active {
+					.card {
+						@apply -translate-y-14 opacity-100 grayscale-0;
+						box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1),
+							0px 10px 20px -10px rgba(0, 0, 0, 0.1);
+					}
+				}
+			}
+		}
+		.swiper-pagination {
+			@apply flex justify-center gap-x-1.5;
+			&-bullet {
+				@apply inline-block h-2.5 w-2.5 overflow-hidden rounded-full bg-black/5;
+				@apply transition-all;
+				&-active {
+					@apply w-8 bg-[var(--primaryColor)];
+				}
+			}
+		}
+		.swiper-navigation {
+			@apply absolute top-1/2 z-20 flex h-0 w-full -translate-y-6 justify-between;
+			div[class^='swiper-button'] {
+				@apply inline-flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-slate-50 bg-white -indent-[9999px] opacity-50 shadow-lg transition-colors
+				hover:border-[var(--primaryColor)] hover:bg-[var(--primaryColor)] hover:opacity-100 hover:shadow-none;
+				svg {
+					@apply stroke-slate-200;
+				}
+			}
+			.swiper-button {
+				&-prev {
+					@apply -ml-2 lg:-ml-6;
+				}
+				&-next {
+					@apply -mr-2 lg:-mr-6;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+.story {
+	@apply overflow-x-hidden;
+	&--wrap {
+		@apply container--full;
+	}
+	&--desc {
+		@apply grid grid-cols-1 lg:grid-cols-2;
+	}
+	&--bg {
+		@apply relative  hidden min-h-[calc(100vw/2)] lg:block;
+		.bg {
+			@apply absolute bottom-0 left-0 top-0 w-[calc(100vw/2)] bg-contain bg-center bg-no-repeat;
+		}
+	}
+}

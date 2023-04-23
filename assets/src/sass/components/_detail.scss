@@ -1,0 +1,21 @@
+.detail {
+	@apply invisible fixed left-1/2 top-[10px] z-30 flex max-h-full w-[90.1vmin] cursor-pointer flex-col overflow-auto text-[0];
+	& > img {
+		@apply relative z-10;
+	}
+	.content {
+		@apply flex-grow bg-gray-700 p-8 text-base;
+		& > * {
+			@apply mb-4;
+		}
+		.title {
+			@apply text-3xl font-bold uppercase;
+		}
+		.secondary {
+			@apply text-gray-400;
+		}
+		.description {
+			@apply text-base leading-6;
+		}
+	}
+}

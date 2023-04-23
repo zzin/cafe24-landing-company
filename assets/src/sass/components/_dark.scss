@@ -1,0 +1,17 @@
+.toggle-mode {
+	.dot-inner {
+		transform: translateX(-50%);
+	}
+	input:checked ~ .dot {
+		transform: translateX(100%);
+		.dot-inner {
+			transform: translateX(0);
+		}
+	}
+}
+
+html.dark {
+	body {
+		@apply bg-black;
+	}
+}
