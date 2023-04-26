@@ -1,44 +1,44 @@
 $property: '.card';
 #{$property} {
-	@apply relative;
-	&--crew {
-		figure {
-			@apply mb-2 overflow-hidden rounded-2xl lg:mb-4;
-			img {
-				@apply w-full;
-			}
-		}
-		#{$property} {
-			&--body {
-				#{$property} {
-					&--title {
-						@apply text-lg font-bold text-black lg:text-xl;
-					}
-					&--text {
-						@apply text-sm lg:text-base;
-					}
-				}
-			}
-		}
-	}
-	&--product {
-		figure {
-			@apply mb-2 overflow-hidden rounded-2xl lg:mb-4;
-			img {
-				@apply w-full;
-			}
-		}
-		#{$property} {
-			&--body {
-				#{$property} {
-					&--title {
-						@apply text-lg font-bold text-black lg:text-xl;
-					}
-					&--text {
-						@apply text-sm lg:text-base;
-					}
-				}
-			}
-		}
-	}
+  @apply relative;
+  &--crew {
+    figure {
+      @apply mb-2 overflow-hidden rounded-2xl lg:mb-4;
+      img {
+        @apply w-full;
+      }
+    }
+    #{$property} {
+      &--body {
+        #{$property} {
+          &--title {
+            @apply text-lg font-bold text-black lg:text-xl;
+          }
+          &--text {
+            @apply text-sm lg:text-base;
+          }
+        }
+      }
+    }
+  }
+  &--product {
+    figure {
+      @apply mb-2 overflow-hidden rounded-2xl lg:mb-4;
+      img {
+        @apply w-full;
+      }
+    }
+    #{$property} {
+      &--body {
+        #{$property} {
+          &--title {
+            @apply text-lg font-bold text-black lg:text-xl;
+          }
+          &--text {
+            @apply text-sm lg:text-base;
+          }
+        }
+      }
+    }
+  }
 }

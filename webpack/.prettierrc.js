@@ -6,9 +6,9 @@
  * @since 1.0.0
  */
 module.exports = {
-	trailingComma: 'es5',
-	tabWidth: 2,
-	semi: true,
-	useTabs: true,
-	singleQuote: true,
+  trailingComma: 'es5',
+  tabWidth: 2,
+  semi: true,
+  useTabs: false,
+  singleQuote: true,
 };

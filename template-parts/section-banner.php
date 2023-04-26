@@ -1,8 +1,8 @@
-<section class="section banner">
+<section class="section banner" data-aos="banner-eff" data-aos-anchor-placement="top-bottom" data-aos-delay="200" data-aos-offset="100">
   <div class="relative">
     <figure class="figure-banner">
       <img src="<?php bloginfo(
-      	'template_url'
+        'template_url'
       ); ?>/assets/public/images/banner/banner-bg-shopping.jpg" alt="">
     </figure>
     <div class="massage">

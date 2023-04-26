@@ -206,7 +206,7 @@ var initNavigation = new _initNavigation__WEBPACK_IMPORTED_MODULE_8__["default"]
 var initDark = new _initDark__WEBPACK_IMPORTED_MODULE_1__["default"]();
 var initHero = new _initHero__WEBPACK_IMPORTED_MODULE_5__["default"]();
 var initFlickity = new _initFlickity__WEBPACK_IMPORTED_MODULE_4__["default"]();
-var initBanner = new _initBanner__WEBPACK_IMPORTED_MODULE_0__["default"]();
+// const initBanner = new InitBanner();
 var initMarquee = new _initMarquee__WEBPACK_IMPORTED_MODULE_6__["default"]();
 var initFaq = new _initFaq__WEBPACK_IMPORTED_MODULE_3__["default"]();
 var initRequest = new _initRequest__WEBPACK_IMPORTED_MODULE_7__["default"]();
@@ -242,10 +242,26 @@ var InitBanner = function InitBanner() {
           trigger: figureBanner,
           start: 'top 90%',
           end: 'top 50%',
-          scrub: 1.2
+          scrub: 1.35
         }
       });
+      setTimeout(function () {
+        scrollRefresh();
+      }, 2000);
     }
+    var scrollRefresh = function scrollRefresh() {
+      gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.refresh();
+    };
+    function debounce(func) {
+      var timer;
+      return function (event) {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(function () {
+          func();
+        }, 2000, event);
+      };
+    }
+    window.addEventListener('resize', debounce(scrollRefresh));
   };
   document.addEventListener('DOMContentLoaded', function () {
     init();
@@ -355,6 +371,19 @@ var InitDefault = function InitDefault() {
     });
     initQuickGo();
     initGlobal();
+    var aosRefresh = function aosRefresh() {
+      aos__WEBPACK_IMPORTED_MODULE_0___default().refresh();
+    };
+    function debounce(func) {
+      var timer;
+      return function (event) {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(function () {
+          func();
+        }, 2000, event);
+      };
+    }
+    window.addEventListener('resize', debounce(aosRefresh));
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InitDefault);
@@ -404,11 +433,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var flickity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! flickity */ "./node_modules/flickity/js/index.js");
-/* harmony import */ var flickity__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(flickity__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! imagesloaded */ "./node_modules/imagesloaded/imagesloaded.js");
-/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(imagesloaded__WEBPACK_IMPORTED_MODULE_1__);
-/* eslint-disable import/no-extraneous-dependencies */
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var flickity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flickity */ "./node_modules/flickity/js/index.js");
+/* harmony import */ var flickity__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flickity__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! imagesloaded */ "./node_modules/imagesloaded/imagesloaded.js");
+/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(imagesloaded__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 var InitFlickity = function InitFlickity() {
@@ -453,14 +484,21 @@ var InitFlickity = function InitFlickity() {
   };
   var makeFlickity = function makeFlickity(el) {
     var target = el.querySelector('.flickity');
-    var imgLoad = imagesloaded__WEBPACK_IMPORTED_MODULE_1___default()(target);
+    var imgLoad = imagesloaded__WEBPACK_IMPORTED_MODULE_2___default()(target);
     imgLoad.on('done', function (instance) {
-      var flkty = new (flickity__WEBPACK_IMPORTED_MODULE_0___default())(target, {
+      var flkty = new (flickity__WEBPACK_IMPORTED_MODULE_1___default())(target, {
         cellAlign: 'center',
-        contain: true
-      });
-      flkty.on('change', function (e) {
-        moveLineBar(e);
+        contain: true,
+        on: {
+          ready: function ready() {
+            setInterval(function () {
+              aos__WEBPACK_IMPORTED_MODULE_0___default().refresh();
+            }, 500);
+          },
+          change: function change(e) {
+            moveLineBar(e);
+          }
+        }
       });
       var newDiv = document.createElement('div');
       var newDivBar = document.createElement('div');
@@ -779,22 +817,26 @@ var InitNavigation = function InitNavigation() {
       var link = _step.value;
       link.addEventListener('focus', toggleFocus, true);
       link.addEventListener('blur', toggleFocus, true);
+      link.addEventListener('click', toggleClick, true);
     }
-
-    /**
-     * Sets or removes .focus class on an element.
-     */
   } catch (err) {
     _iterator.e(err);
   } finally {
     _iterator.f();
   }
-  function toggleFocus() {
+  function toggleClick() {
     if (body.classList.contains('is-mobile-menu')) {
       setTimeout(function () {
+        console.log('click');
         button.click();
       }, 100);
     }
+  }
+
+  /**
+   * Sets or removes .focus class on an element.
+   */
+  function toggleFocus() {
     if (event.type === 'focus' || event.type === 'blur') {
       var self = this;
       // Move up through the ancestors of the current link until we hit .nav-menu.

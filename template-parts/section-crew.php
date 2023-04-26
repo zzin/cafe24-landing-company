@@ -10,9 +10,21 @@
       </div>
     </div>
     <div class="crew--list">
-      <?php for ($i = 0; $i <= 4; $i++) {
-      	get_template_part('template-parts/split/split', 'crew', ['$num' => $i]);
-      } ?>
+      <?php
+      $args = [
+        'post_type' => 'page-crew',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+      ];
+      $query = new WP_Query($args);
+      if ($query->have_posts()) {
+        while ($query->have_posts()) {
+          $query->the_post();
+          get_template_part('template-parts/split/split', 'crew');
+        }
+      }
+      wp_reset_postdata();
+      ?>
     </div>
   </div>
 </section>

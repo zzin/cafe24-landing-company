@@ -1,0 +1,8 @@
+.ul {
+  &--sns {
+    @apply flex gap-1 lg:gap-2;
+  }
+  &--story {
+    @apply flex flex-col;
+  }
+}

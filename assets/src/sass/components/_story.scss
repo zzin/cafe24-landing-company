@@ -1,15 +1,24 @@
 .story {
-	@apply overflow-x-hidden;
-	&--wrap {
-		@apply container--full;
-	}
-	&--desc {
-		@apply grid grid-cols-1 lg:grid-cols-2;
-	}
-	&--bg {
-		@apply relative  hidden min-h-[calc(100vw/2)] lg:block;
-		.bg {
-			@apply absolute bottom-0 left-0 top-0 w-[calc(100vw/2)] bg-contain bg-center bg-no-repeat;
-		}
-	}
+  @apply overflow-x-hidden;
+  &--wrap {
+    @apply container--full;
+  }
+  &--desc {
+    @apply grid grid-cols-1 lg:grid-cols-2;
+  }
+  &--bg {
+    @apply relative  hidden min-h-[calc(100vw/2)] lg:block;
+    .bg {
+      @apply absolute bottom-0 left-0 top-0 w-[calc(100vw/2)] bg-contain bg-center bg-no-repeat;
+    }
+  }
+  &--title {
+    @apply mb-2 text-2xl font-bold text-black lg:mb-4 lg:text-4xl;
+  }
+  &--info {
+    @apply mb-4 lg:mb-8;
+    ul {
+      @apply text-sm lg:text-xl;
+    }
+  }
 }
