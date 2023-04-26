@@ -1,19 +1,25 @@
+<?php
+$banner = get_field('banner');
+if ($banner['chk']):
+
+  $image = $banner['bg'];
+  $size = 'full';
+  ?>
 <section class="section banner" data-aos="banner-eff" data-aos-anchor-placement="top-bottom" data-aos-delay="200" data-aos-offset="100">
   <div class="relative">
     <figure class="figure-banner">
-      <img src="<?php bloginfo(
-        'template_url'
-      ); ?>/assets/public/images/banner/banner-bg-shopping.jpg" alt="">
+      <?= wp_get_attachment_image($image, $size) ?>
     </figure>
     <div class="massage">
-      <h3 class="title">ONLINE SHOPPING MALL</h3>
+      <h3 class="title"><?= $banner['titleMain'] ?></h3>
       <p class="lead">
-        온라인에서 만나 보세요.<br />
-        간편하게 쇼핑 하실 수 있습니다.
+        <?= nl2br($banner['description']) ?>
       </p>
-      <a href="#" class="btn btn--default">
-        GO SHOP
+      <a href="<?= $banner['link'] ?>" class="btn btn--default" target="_blank">
+        <?= $banner['linkTitle'] ?>
       </a>
     </div>
   </div>
 </section>
+<?php
+endif; ?>

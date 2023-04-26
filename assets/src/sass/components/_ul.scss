@@ -1,6 +1,11 @@
 .ul {
   &--sns {
     @apply flex gap-1 lg:gap-2;
+    a {
+      svg {
+        @apply h-4 w-4 lg:h-5 lg:w-5;
+      }
+    }
   }
   &--story {
     @apply flex flex-col;

@@ -13,8 +13,129 @@
   }
 }
 
+$propertyCard: '.card';
+
 html.dark {
   body {
     @apply bg-black;
+  }
+  .title--wrap {
+    @apply text-white;
+  }
+  #{$propertyCard} {
+    &--product,
+    &--crew {
+      #{$propertyCard} {
+        &--body {
+          #{$propertyCard} {
+            &--title {
+              @apply text-white;
+            }
+            &--text {
+              @apply text-white/60;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about {
+    .flickity {
+      &-nav-line {
+        @apply bg-white/10;
+        .bar {
+          @apply bg-white;
+        }
+      }
+    }
+    .control {
+      .btn--oval {
+        @apply border-white bg-white/80;
+        &:hover {
+          box-shadow: 0 0 0 1px white inset;
+        }
+      }
+    }
+  }
+
+  .story {
+    &--title {
+      @apply text-white;
+    }
+    &--info {
+      @apply text-white/60;
+    }
+  }
+
+  .marquee {
+    &--wrap {
+      .marquee-content {
+        .text {
+          @apply text-white/10;
+        }
+      }
+    }
+  }
+
+  .faq {
+    @apply bg-white/10;
+    &--ul {
+      @apply border-white/40;
+      .item {
+        @apply border-white/40;
+        .question {
+          .title {
+            @apply text-white;
+          }
+        }
+        .answer {
+          @apply text-white/60;
+        }
+      }
+    }
+  }
+
+  .contact--form {
+    .title {
+      @apply text-white;
+    }
+  }
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  textarea {
+    @apply bg-white/10;
+  }
+
+  .site {
+    &-footer {
+      @apply border-white/10;
+      address {
+        ul {
+          li {
+            strong {
+              @apply text-white/50;
+            }
+            span {
+              @apply text-white/60;
+              a {
+                @apply text-white/60;
+              }
+            }
+          }
+        }
+      }
+    }
+    &-info {
+      @apply text-white/60;
+    }
+  }
+
+  #scroll-top {
+    @apply bg-white/10;
+    .btn--up {
+      background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 50 50' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'%3E%3Cpath d='M38.322,30.161l-13.161,-13.161l-13.161,13.161l2.742,2.742l10.419,-10.42l10.42,10.42l2.741,-2.742Z' style='fill:%23fff;'/%3E%3C/svg%3E");
+    }
   }
 }

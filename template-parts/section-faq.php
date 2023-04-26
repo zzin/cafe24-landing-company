@@ -1,10 +1,12 @@
+<?php
+$faq = get_field('faq');
+if ($faq['chk']): ?>
 <section class="section faq" id="section-faq">
   <div class="faq--title">
     <div class="title--wrap">
-      <h2 class="title">FAQ</h2>
+      <h2 class="title"><?= $faq['titleMain'] ?></h2>
       <div class="description">
-        스튜디오 모임에 대한 궁금하신 내용을 정리 했습니다.<br />
-        언제든지 문의 주시면 성실하게 답변 드리겠습니다.
+        <?= $faq['description'] ?>
       </div>
     </div>
   </div>
@@ -28,3 +30,4 @@
     </ul>
   </div>
 </section>
+<?php endif; ?>

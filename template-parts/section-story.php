@@ -1,9 +1,13 @@
+<?php
+$story = get_field('story');
+if ($story['chk']): ?>
+
 <section class="section story" id="section-story">
   <div class="story--wrap">
     <div class="title--wrap">
-      <h2 class="title">STORY</h2>
+      <h2 class="title"><?= $story['titleMain'] ?></h2>
       <div class="description">
-        디자인 모임은 시작과 함께 역사를 쓰고 있습니다.
+        <?= $story['description'] ?>
       </div>
     </div>
     <div class="story--desc mt-8">
@@ -36,3 +40,4 @@
     </div>
   </div>
 </section>
+<?php endif; ?>

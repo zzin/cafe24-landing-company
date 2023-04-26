@@ -1,9 +1,11 @@
+<?php
+$contact = get_field('contact');
+if ($contact['chk']): ?>
 <section class="section contact" id="section-contact">
   <div class="title--wrap">
-    <h2 class="title">CONTACT</h2>
+    <h2 class="title"><?= $contact['titleMain'] ?></h2>
     <div class="description">
-      스튜디오 모임은 당신의 진정한 디자인 파트너 입니다.<br />
-      문의 사항을 남겨주시면 담당자 확인 후 연락 드리겠습니다.
+      <?= $contact['description'] ?>
     </div>
   </div>
   <form id="requestForm">
@@ -41,7 +43,7 @@
         <li>보유기간 : 위 목적 달성시 까지</li>
       </ul>
       <div class="lg:col-span-2">
-        <label class="font-semibold text-black pb-5">
+        <label class="font-semibold text-black dark:text-white pb-5">
           <input type="checkbox" id="agree" name="agree" data-message="이용목적에 동의하셔야 합니다."> 위의 이용목적에 동의 합니다.
           <span class="error-message"></span>
         </label>
@@ -52,3 +54,4 @@
     </div>
   </form>
 </section>
+<?php endif; ?>
