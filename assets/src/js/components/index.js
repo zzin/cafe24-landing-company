@@ -8,11 +8,19 @@ import InitMarquee from './initMarquee';
 import InitRequest from './initRequest';
 import InitNavigation from './initNavigation';
 import InitScrollTop from './initScrollTop';
+import InitSingle from './initSingle';
+
+const body = document.body;
 
 const initDefault = new InitDefault();
 const initNavigation = new InitNavigation();
 const initDark = new InitDark();
-const initHero = new InitHero();
+if (body.classList.contains('home')) {
+  const initHero = new InitHero();
+}
+if (body.classList.contains('single')) {
+  const initSingle = new InitSingle();
+}
 const initFlickity = new InitFlickity();
 // const initBanner = new InitBanner();
 const initMarquee = new InitMarquee();

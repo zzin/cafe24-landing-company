@@ -1,0 +1,14 @@
+.fixed {
+  .column-featured_image {
+    @apply w-[50px] min-w-[50px] md:w-[100px] md:min-w-[100px];
+    img.attachment-thumbnail {
+      @apply h-auto w-[50px] md:w-[100px];
+    }
+  }
+  tr.status-unread {
+    @apply bg-green-100;
+    &:nth-child(odd) {
+      @apply bg-green-200;
+    }
+  }
+}

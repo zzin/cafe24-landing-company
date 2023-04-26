@@ -6,26 +6,26 @@
       문의 사항을 남겨주시면 담당자 확인 후 연락 드리겠습니다.
     </div>
   </div>
-  <form id="requestForm" method="post">
+  <form id="requestForm">
     <input type="hidden" id="security" name="security" value="<?= wp_create_nonce(
-    	'zeein-save'
+      'moim-save'
     ) ?>" />
     <div class="contact--form">
       <h3 class="title">기본 정보</h3>
       <label class="block">
-        <input type="text" placeholder="회사/단체명" id="company" name="company" data-message="회사/단체명을 입력하세요" />
+        <input type="text" placeholder="회사/단체명" id="company" name="company" data-message="회사/단체명을 입력하세요" value="" />
         <span class="error-message"></span>
       </label>
       <label class="block">
-        <input type="text" placeholder="성함" id="name" name="name" data-message="성함을 입력하세요" />
+        <input type="text" placeholder="성함" id="name" name="name" data-message="성함을 입력하세요" value="" />
         <span class="error-message"></span>
       </label>
       <label class="block">
-        <input type="tel" placeholder="연락처" id="tel" name="tel" data-message="연락처를 입력하세요" />
+        <input type="tel" placeholder="연락처" id="tel" name="tel" data-message="연락처를 입력하세요" value="" />
         <span class="error-message"></span>
       </label>
       <label class="block">
-        <input type="email" placeholder="이메일" id="email" name="email" data-message="이메일 주소를 입력하세요" />
+        <input type="email" placeholder="이메일" id="email" name="email" data-message="이메일 주소를 입력하세요" value="" />
         <span class="error-message"></span>
       </label>
 

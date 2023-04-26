@@ -3,7 +3,7 @@ $property: '.card';
   @apply relative;
   &--crew {
     figure {
-      @apply mb-2 overflow-hidden rounded-2xl lg:mb-4;
+      @apply mb-2 overflow-hidden rounded-lg lg:mb-4 lg:rounded-2xl;
       img {
         @apply w-full;
       }
@@ -23,7 +23,7 @@ $property: '.card';
   }
   &--product {
     figure {
-      @apply mb-2 overflow-hidden rounded-2xl lg:mb-4;
+      @apply mb-2 overflow-hidden rounded-lg lg:mb-4 lg:rounded-2xl;
       img {
         @apply w-full;
       }

@@ -1,11 +1,11 @@
+<?php
+$photo = get_the_post_thumbnail(get_the_ID(), 'full'); ?>
 <div class="card card--product">
   <figure>
-    <img src="<?php bloginfo(
-    	'template_url'
-    ); ?>/assets/public/images/temp/products-img.jpg" alt="temp">
+    <?= $photo ?>
   </figure>
   <div class="card--body">
-    <h5 class="card--title">기업전용 사이트</h5>
-    <p class="card--text">워드프레스 자체테마를 이용한 사이트로 기업 전용 사이트 입니다.</p>
+    <h5 class="card--title"><?= get_the_title() ?></h5>
+    <div class="card--text"><?= get_the_content() ?></div>
   </div>
 </div>
