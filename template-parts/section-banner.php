@@ -5,7 +5,7 @@ if ($banner['chk']):
   $image = $banner['bg'];
   $size = 'full';
   ?>
-<section class="section banner" data-aos="banner-eff" data-aos-anchor-placement="top-bottom" data-aos-delay="200" data-aos-offset="100">
+<section class="section banner" data-aos="banner-eff" data-aos-anchor-placement="top-bottom" data-aos-delay="200" data-aos-offset="100" id="section-banner">
   <div class="relative">
     <figure class="figure-banner">
       <?= wp_get_attachment_image($image, $size) ?>
