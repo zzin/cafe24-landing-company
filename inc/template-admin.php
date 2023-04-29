@@ -2,6 +2,7 @@
 function _themename_remove_menus()
 {
   $current_user = wp_get_current_user();
+  remove_menu_page('edit.php'); // Posts
   remove_menu_page('edit-comments.php'); // Comments
 }
 add_action('admin_init', '_themename_remove_menus');
