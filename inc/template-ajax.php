@@ -7,7 +7,7 @@ function zeein_saveRequest_ajax_handler()
   // 보안을 위한 체크
   check_ajax_referer('moim-save', 'security');
 
-  wh_log($_POST);
+  // wh_log($_POST);
   // $_POST
   $requestCompany = $_POST['data']['company'];
   $requestName = $_POST['data']['name'];

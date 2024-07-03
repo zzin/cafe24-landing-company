@@ -23,22 +23,24 @@ const InitDefault = () => {
   const initQuickGo = () => {
     gsap.utils.toArray('#primary-menu .menu-item a').forEach((link) => {
       const target = link.getAttribute('href');
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const heightValue = document.documentElement.classList.contains(
-          'size-pc'
-        )
-          ? 72
-          : 52;
-        gsap.to(window, {
-          duration: 0.8,
-          scrollTo: {
-            y: target,
-            offsetY: heightValue,
-          },
-          ease: 'power3.out',
+      if (link.getAttribute('href').startsWith('#')) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const heightValue = document.documentElement.classList.contains(
+            'size-pc'
+          )
+            ? 72
+            : 52;
+          gsap.to(window, {
+            duration: 0.8,
+            scrollTo: {
+              y: target,
+              offsetY: heightValue,
+            },
+            ease: 'power3.out',
+          });
         });
-      });
+      }
     });
   };
   document.addEventListener('DOMContentLoaded', () => {

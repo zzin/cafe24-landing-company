@@ -120,5 +120,9 @@
 		"Stylelint",
 		"SCSS",
 		"WP-Pot"
-	]
+	],
+  "volta": {
+    "node": "16.15.1",
+    "yarn": "1.22.19"
+  }
 }
