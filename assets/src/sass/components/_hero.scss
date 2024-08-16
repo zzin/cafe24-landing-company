@@ -2,6 +2,10 @@
   @apply relative flex min-h-screen items-center justify-center overflow-hidden bg-black;
   &--bg {
     @apply absolute left-0 top-0 h-full w-full bg-cover bg-center bg-no-repeat opacity-0;
+    &-pc,
+    &-mo {
+      @apply w-full h-full bg-cover bg-center bg-no-repeat;
+    }
   }
   &--slogan {
     @apply container--full relative grid gap-8 text-white opacity-0 md:grid-cols-4 lg:grid-cols-2;
